@@ -50,7 +50,7 @@ flowchart TD
     Med -- "NTP Sync" --> Internet((Internet))
     
     %% ML Flow
-    Glove -.->|Parameter Report (CSV/Logs)| ML
+    Glove -.->|"Parameter Report (CSV/Logs)"| ML
     ML -.->|Predictive Insights| User
 ```
 
