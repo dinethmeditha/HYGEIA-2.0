@@ -22,19 +22,19 @@ Additionally, the system features a **Machine Learning (ML)** component that ana
 The system utilizes a hybrid communication model using **ESP-NOW** for low-latency device-to-device control and **WiFi** for cloud connectivity (Telegram/Web).
 
 ```mermaid
-graph TD
+flowchart TD
     subgraph "Patient Node (Smart Glove)"
         Glove[ESP32 Smart Glove]
         Sensors[MAX30105 & DS18B20] -->|I2C/OneWire| Glove
-        OLED[OLED Display] <--|I2C| Glove
-        Vib[Vibration Motor] <--|GPIO| Glove
+        Glove -->|I2C| OLED[OLED Display]
+        Glove -->|GPIO| Vib[Vibration Motor]
         Btn[Emergency Buttons] -->|GPIO| Glove
     end
 
     subgraph "Medication Node (MedSupply)"
         Med[ESP32 MedSupply Unit]
-        Step[Stepper Motor] <--|Driver| Med
-        WebSched[Web Scheduler] <..>|HTTP| Med
+        Med -->|Driver| Step[Stepper Motor]
+        Med <-->|HTTP| WebSched[Web Scheduler]
     end
 
     subgraph "Cloud & Analytics"
