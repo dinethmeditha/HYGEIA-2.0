@@ -1,0 +1,19 @@
+HYGEIA GLOVE - AI MEDICAL SYSTEM
+============================================================
+
+CLASSIFICATION REPORT:
+
+              precision    recall  f1-score   support
+
+      Normal     0.9322    0.9483    0.9402        58
+     Warning     0.8333    0.7895    0.8108        19
+    Critical     0.0000    0.0000    0.0000         0
+
+    accuracy                         0.9091        77
+   macro avg     0.5885    0.5792    0.5837        77
+weighted avg     0.9078    0.9091    0.9083        77
+
+
+Overall Accuracy: 90.91%
+Mean Prediction Confidence: 0.9351
+Std Prediction Confidence: 0.1056
